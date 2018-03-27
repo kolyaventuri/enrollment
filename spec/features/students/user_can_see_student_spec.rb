@@ -13,7 +13,7 @@ describe 'User' do
     it 'should see the name of the student' do
       student = Student.create!(name: 'Bob')
 
-      visit student_page(student)
+      visit student_path(student)
 
       expect(page).to have_content(student.namer)
     end
