@@ -24,14 +24,14 @@ describe 'User' do
       expect(page).to have_content("Add address for #{student.name}")
 
       fill_in 'address[description]', with: description
-      fill_in 'addresses[street]', with: street
-      fill_in 'addresses[city]', with: city
-      fill_in 'addresses[state]', with: state
-      fill_in 'addresses[zip]', with: zip
+      fill_in 'address[street]', with: street
+      fill_in 'address[city]', with: city
+      fill_in 'address[state]', with: state
+      fill_in 'address[zip]', with: zip
 
       click_on 'Create Address'
 
-      expect(curent_path).to eq(student_path(student))
+      expect(current_path).to eq(student_path(student))
 
       expect(page).to have_content(description)
       expect(page).to have_content(street)
