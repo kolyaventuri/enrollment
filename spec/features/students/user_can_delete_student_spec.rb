@@ -22,7 +22,7 @@ describe 'User' do
 
       expect(page).to have_content(student2.name)
       expect(page).to have_content("#{student1.name} was deleted successfully!")
-      
+
       within('#students') do
         expect(page).to_not have_content(student1.name)
       end
