@@ -54,18 +54,28 @@ describe 'User' do
 
       visit course_path(course1)
 
+      expect(page).to have_content(course1.code)
+      expect(page).to have_content(course1.name)
       expect(page).to have_content(student.name)
       expect(page).to_not have_content(student2.name)
 
       visit course_path(course2)
 
+      expect(page).to have_content(course2.code)
+      expect(page).to have_content(course2.name)
       expect(page).to have_content(student.name)
       expect(page).to have_content(student2.name)
 
       visit course_path(course3)
 
+      expect(page).to have_content(course3.code)
+      expect(page).to have_content(course3.name)
       expect(page).to_not have_content(student.name)
       expect(page).to have_content(student2.name)
+
+      click_on student2.name
+
+      expect(current_path).to eq(student_path(student2))
 
     end
   end
