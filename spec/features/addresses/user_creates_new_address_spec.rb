@@ -31,7 +31,7 @@ describe 'User' do
 
       click_on 'Create Address'
 
-      expect(curent_path).to eq(student_path(student))
+      expect(current_path).to eq(student_path(student))
 
       expect(page).to have_content(description)
       expect(page).to have_content(street)
