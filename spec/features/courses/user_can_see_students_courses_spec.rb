@@ -11,11 +11,11 @@ describe 'User' do
 
   describe 'visits a students page' do
     it 'should be able to see all the students courses' do
-      student = Student.create(name: 'Bob')
-      course1 = Course.create(code: 'EEE100', name: 'Intro to Electrical Engineering')
-      course2 = Course.create(code: 'ENG101', name: 'College Writing')
-      StudentCourse.create(student_id: student.id, course_id: course1.id)
-      StudentCourse.create(student_id: student.id, course_id: course2.id)
+      student = Student.create!(name: 'Bob')
+      course1 = Course.create!(code: 'EEE100', name: 'Intro to Electrical Engineering')
+      course2 = Course.create!(code: 'ENG101', name: 'College Writing')
+      StudentCourse.create!(student_id: student.id, course_id: course1.id)
+      StudentCourse.create!(student_id: student.id, course_id: course2.id)
 
       visit student_path(student)
 

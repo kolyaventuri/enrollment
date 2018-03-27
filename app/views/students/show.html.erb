@@ -14,5 +14,10 @@
 
 <h1>Courses</h1>
 <ul id="courses">
-
+  <% @student.courses.find_each do |course| %>
+    <li>
+      <h3><%= course.code %></h3>
+      <p><%= course.name %></p>
+    </li>
+  <% end %>
 </ul>
