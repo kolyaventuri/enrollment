@@ -23,6 +23,7 @@ describe 'User' do
 
       expect(current_path).to eq(student_path(student))
       expect(page).to have_content(new_name)
+      expect(page).to have_content("#{new_name} updated succesfull!")
     end
   end
 end
