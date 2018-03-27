@@ -25,6 +25,7 @@ describe 'User' do
       expect(current_path).to eq('/students/1')
 
       expect(page).to have_content(name)
+      expect(page).to have_content("#{name} added successfully!")
     end
   end
 end

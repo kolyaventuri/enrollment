@@ -12,6 +12,17 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  def create
+    student = Student.new(student_params)
+    if student.save
+      flash[:success] = "#{student.name} added successfully!"
+      redirect_to student_path(student)
+    else
+      flash[:error] = "There was an error adding the student.r"
+      render :new
+    end
+  end
+
   def edit
     @student = Student.find(params[:id])
   end
