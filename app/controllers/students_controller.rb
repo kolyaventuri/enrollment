@@ -23,6 +23,17 @@ class StudentsController < ApplicationController
     end
   end
 
+  def destroy
+    name = student.name
+    if student.destroy
+      flash[:success] = "#{name} was deleted successfully!"
+      redirect_to students_path
+    else
+      flash[:error] = 'There was a problem in deleting the student.'
+      render :student
+    end
+  end
+
   private
 
   def student
