@@ -24,6 +24,7 @@ class StudentsController < ApplicationController
   end
 
   private
+
   def student
     Student.find(params[:id])
   end
