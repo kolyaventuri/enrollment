@@ -1,0 +1,10 @@
+<h1><%= @course.code %> - <%= @course.name %></h1>
+<h2>Students</h2>
+
+<ul id="students">
+  <% @students.find_each do |student| %>
+    <li>
+      <%= link_to student.name, student_path(student), id: "student_#{student.id}" %>
+    </li>
+  <% end %>
+</ul>

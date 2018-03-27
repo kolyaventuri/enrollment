@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :addresses, only: [:create, :new]
   end
 
+  resources :courses, only: [:index, :show]
+
   root to: 'home#index'
 end
