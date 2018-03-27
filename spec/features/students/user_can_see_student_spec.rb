@@ -15,7 +15,7 @@ describe 'User' do
 
       visit student_path(student)
 
-      expect(page).to have_content(student.namer)
+      expect(page).to have_content(student.name)
     end
   end
 end
