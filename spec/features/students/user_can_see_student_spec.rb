@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'User' do
   before(:all) do
     DatabaseCleaner.clean
+    Student.create!(name: 'Bob')
   end
 
   after(:all) do
@@ -11,11 +12,17 @@ describe 'User' do
 
   describe 'visits page for a student' do
     it 'should see the name of the student' do
-      student = Student.create!(name: 'Bob')
+      visit student_path(Student.last)
 
-      visit student_path(student)
+      expect(page).to have_content(Student.last.name)
+    end
 
-      expect(page).to have_content(student.name)
+    it 'should be able to go to the edit page' do
+      visit student_path(Student.last)
+
+      click_on 'Edit'
+
+      expect(current_path).to eq(edit_student_path(Student.last))
     end
   end
 end
