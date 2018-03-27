@@ -18,7 +18,7 @@ class StudentsController < ApplicationController
       flash[:success] = "#{student.name} added successfully!"
       redirect_to student_path(student)
     else
-      flash[:error] = "There was an error adding the student.r"
+      flash[:error] = 'There was an error adding the student.r'
       render :new
     end
   end

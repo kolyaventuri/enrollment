@@ -1,0 +1,6 @@
+<nav>
+  <ul class="top-nav">
+    <%= render partial: 'shared/nav_link', locals: { href: students_path, text: 'Students' } %>
+    <%= render partial: 'shared/nav_link', locals: { href: new_student_path, text: 'Create New Student' } %>
+  </ul>
+</nav>
