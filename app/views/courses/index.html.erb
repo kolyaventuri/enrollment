@@ -1,0 +1,9 @@
+<h1>Course List</h1>
+
+<ul id="courses">
+  <% @courses.find_each do |course| %>
+    <li>
+      <%= link_to "#{course.code} - #{course.name}", course_path(course), id: "course_#{course.id}" %>
+    </li>
+  <% end %>
+</ul>

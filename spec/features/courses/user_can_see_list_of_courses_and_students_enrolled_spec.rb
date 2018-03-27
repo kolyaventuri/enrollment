@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 describe 'User' do
+
+  before(:all) do
+    DatabaseCleaner.clean
+  end
+
+  after(:all) do
+    DatabaseCleaner.clean
+  end
+
   describe 'visits course index' do
     it 'should see a list of courses' do
       student = Student.create!(name: 'Bob')
@@ -22,7 +31,7 @@ describe 'User' do
       expect(page).to have_content(course2.code)
       expect(page).to have_content(course3.code)
 
-      find('#course_1').click
+      find("#course_#{course1.id}").click
 
       expect(current_path).to eq(course_path(course1))
     end
