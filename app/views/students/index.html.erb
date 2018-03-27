@@ -1,5 +1,7 @@
 <ul>
   <% @students.find_each do |student| %>
-    <li></li>
+    <li>
+      <%= link_to student.name, student_path(student) %>
+    </li>
   <% end %>
 </ul>
