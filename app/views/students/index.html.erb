@@ -1,0 +1,7 @@
+<ul id="students">
+  <% @students.find_each do |student| %>
+    <li>
+      <%= link_to student.name, student_path(student) %>
+    </li>
+  <% end %>
+</ul>
